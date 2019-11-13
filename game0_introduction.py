@@ -4,7 +4,7 @@ WINDOW_WIDTH = 500
 WINDOW_HEIGHT = 500
 BACKGROUND_COLOR = arcade.color.BLACK
 GAME_TITLE = "Introduction"
-GAME_SPEED = 1/60
+GAME_SPEED = 1 / 60
 
 TIMER_MAXIMUM = 100
 
@@ -14,7 +14,7 @@ NEXT_PHASE = {
     'waiting': 'spinning backward',
     'spinning backward': 'waiting again',
     'waiting again': 'spinning forward'
-    }
+}
 
 
 class Cisc108Logo(arcade.Sprite):
@@ -25,8 +25,8 @@ class Cisc108Logo(arcade.Sprite):
         super().__init__("images/cisc108_banner.png")
         self.phase = 'waiting'
         self.timer = 0
-        self.center_x = WINDOW_WIDTH/2
-        self.center_y = WINDOW_HEIGHT/2
+        self.center_x = WINDOW_WIDTH / 2
+        self.center_y = WINDOW_HEIGHT / 2
 
     def update_timer(self):
         if self.timer < TIMER_MAXIMUM:
@@ -66,6 +66,7 @@ class Cisc108Game(arcade.Window):
 
     def on_update(self, delta_time):
         self.logo_list.update()
+
 
 def main():
     window = Cisc108Game()
